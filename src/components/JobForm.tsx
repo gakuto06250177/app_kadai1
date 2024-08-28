@@ -37,7 +37,7 @@ const JobForm: React.FC<JobFormProps> = ({ AddJob }) => {
 
   return (
     <form onSubmit={handleSubmit} className="bg-white p-6 border rounded w-full max-w-2xl shadow-md mx-auto">
-      <h2 className="text-black font-bold mb-4">求人投稿</h2>
+      <h2 className="text-xl text-black font-bold mb-4">求人投稿</h2>
       <div className="mb-4">
         <label className="text-black block mb-2">求人タイトル</label>
         <input
