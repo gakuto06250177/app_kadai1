@@ -48,7 +48,7 @@ function App() {
           <aside className="p-4 bg-gray-200" style={{ width: '200px' }}>
           <JobFilter categories={categories} onCategoryChange={setSelectedCategories} onSalaryChange={setMinSalary} />
           </aside>
-          <main className="p-4 bg-white" style={{ width: '700px' }}>
+          <main className="p-4 bg-white" style={{ width: '1000px' }}>
             <Routes>
               <Route path="/" element={<JobListWrapper jobs={filteredJobs} />} />
               <Route path="/post" element={<JobFormWrapper addJob={addJob} />} />
