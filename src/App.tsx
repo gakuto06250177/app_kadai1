@@ -1,5 +1,5 @@
 //App.tsx
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import JobFilter from './components/JobFilter';
 import JobList from './components/JobList';
