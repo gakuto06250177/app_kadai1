@@ -14,9 +14,9 @@ interface Job {
 
 function App() {
   const [jobs, setJobs] = useState<Job[]>([
+    //テスト用に最初から追加してます。
     { id: 1, title: "経験者歓迎!大手企業でのWebエンジニア募集", category: "エンジニア", salary: "600" },
     { id: 2, title: "未経験OK!営業アシスタント急募", category: "営業", salary: "350" },
-    //テスト用で最初から追加
   ]);
   const [categories, setCategories] = useState<string[]>(["エンジニア", "営業"]);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
@@ -34,6 +34,7 @@ function App() {
     parseInt(job.salary) >= parseInt(minSalary) &&
     (selectedCategories.length === 0 || selectedCategories.includes(job.category))
   );
+  
   return (
     <Router>
       <div className="min-h-screen bg-gray-100 flex flex-col">
@@ -48,7 +49,7 @@ function App() {
           <aside className="p-4 bg-gray-200" style={{ width: '200px' }}>
           <JobFilter categories={categories} onCategoryChange={setSelectedCategories} onSalaryChange={setMinSalary} />
           </aside>
-          <main className="p-4 bg-white" style={{ width: '1000px' }}>
+          <main className="p-4 bg-white" style={{ width: '800px' }}>
             <Routes>
               <Route path="/" element={<JobListWrapper jobs={filteredJobs} />} />
               <Route path="/post" element={<JobFormWrapper addJob={addJob} />} />
