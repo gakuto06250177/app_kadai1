@@ -16,11 +16,11 @@ function App() {
   const [jobs, setJobs] = useState<Job[]>([
     { id: 1, title: "経験者歓迎!大手企業でのWebエンジニア募集", category: "エンジニア", salary: "600" },
     { id: 2, title: "未経験OK!営業アシスタント急募", category: "営業", salary: "350" },
-    // 他の求人情報も追加
+    //テスト用で最初から追加
   ]);
-  const [categories, setCategories] = useState<string[]>(["エンジニア", "デザイン"]);
+  const [categories, setCategories] = useState<string[]>(["エンジニア", "営業"]);
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
-  const [minSalary, setMinSalary] = useState<string>("300");
+  const [minSalary, setMinSalary] = useState<string>("100");
 
   const addJob = (newJob: Job) => {
     setJobs([newJob, ...jobs]);
