@@ -4,6 +4,7 @@
  */
 
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface Job {
   id: number;
@@ -20,19 +21,22 @@ const JobForm: React.FC<JobFormProps> = ({ AddJob }) => {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
   const [salary, setSalary] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const newJob = {
-      id: Date.now(), // 一意のIDを生成
+      id: Date.now(),
       title,
       category,
       salary,
     };
     AddJob(newJob);
-    setTitle(''); // フォームをリセット
+    setTitle('');
     setCategory('');
     setSalary('');
+
+    navigate('/');
   };
 
   return (
@@ -65,6 +69,7 @@ const JobForm: React.FC<JobFormProps> = ({ AddJob }) => {
           <option value="財務・経理">財務・経理</option>
           <option value="人事">人事</option>
           <option value="カスタマーサポート">カスタマーサポート</option>
+          <option value="製造">製造</option>
           <option value="医療・介護">医療・介護</option>
         </select>
       </div>

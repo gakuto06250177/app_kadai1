@@ -1,4 +1,8 @@
-//JobList.tsx
+ /**
+  * 求人一覧表示
+  * JobList.tsx
+  */
+
 import React from 'react';
 
 interface Job {
