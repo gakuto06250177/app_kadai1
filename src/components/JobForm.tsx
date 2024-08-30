@@ -14,10 +14,10 @@ interface Job {
 }
 
 interface JobFormProps {
-  AddJob: (job: Job) => void;
+  onAddJob: (job: Job) => void;
 }
 
-const JobForm: React.FC<JobFormProps> = ({ AddJob }) => {
+const JobForm: React.FC<JobFormProps> = ({ onAddJob }) => {
   const [title, setTitle] = useState('');
   const [category, setCategory] = useState('');
   const [salary, setSalary] = useState('');
@@ -31,12 +31,12 @@ const JobForm: React.FC<JobFormProps> = ({ AddJob }) => {
       category,
       salary,
     };
-    AddJob(newJob);
+    onAddJob(newJob);
     setTitle('');
     setCategory('');
     setSalary('');
 
-    navigate('/');
+    navigate('/'); //投稿後の移動先
   };
 
   return (

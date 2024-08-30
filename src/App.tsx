@@ -68,7 +68,7 @@ const JobListWrapper = ({ jobs }: { jobs: Job[] }) => {
 
 //JobFormコンポーネント用
 const JobFormWrapper = ({ addJob }: { addJob: (job: Job) => void }) => {
-  return <JobForm AddJob={addJob} />;
+  return <JobForm onAddJob={addJob} />;
 };
 
 export default App;
