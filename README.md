@@ -37,4 +37,42 @@ React、Typescriptでフロントエンドのみ実装しました。ビルド�
 - 新規求人情報の投稿
   - 右上の求人投稿ボタンを押すと、求人投稿ができる画面に遷移します。
   - 求人タイトル、カテゴリ、年収(万円)を入力し投稿ボタンを押せば、求人一覧画面に移動し投稿内容を確認できます。
-    
+
+# 動作手順
+ローカルで動作させる場合、以下のように環境開発してください。
+
+- Viteを使ってビルドしています。ReactとTypescriptを選択してください。
+```
+npm create vite@latest (アプリケーション名) //Reactプロジェクト作成
+npm install //依存関係のインストール
+```
+以下のTailwind CSSの設定は、GitHubリポジトリのファイルにすでに設定済みですが記載しておきます。
+
+- Tailwind CSSをプロジェクトに追加し、設定ファイルを生成する。
+```
+npm install tailwindcss
+npx tailwindcss init -p //設定ファイルの生成。
+```
+- tailwind.config.jsファイルを開き、次のように設定します。
+```
+export default {
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+- src/index.cssにTailwindの基本スタイルをインポートします。
+```
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+サーバーを起動し、表紙されたポートにアクセスしてください。
+```
+npm run dev
+```
