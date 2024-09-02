@@ -1,46 +1,40 @@
 # 課題１(アプリケーションエンジニアBootcamp)　
 
-![Static Badge](https://img.shields.io/badge/%3Cimg%20src%3D%22https%3A%2F%2Fimg.shields.io%2Fbadge%2F-React-555.svg%3Flogo%3Dreact%26style%3Dflat%22%3E)
+#### 課題１URL : https://app-kadai1.vercel.app
+
+React、Typescriptでフロントエンドのみ実装しました。ビルドにはViteを使用しています。
+データベースへの保存等のバックエンド処理を実装していないため、ブラウザを更新すれば投稿データ等は消失します。テスト用にすでにいくつか求人情報を入力しています。
+
+- ## 求人検索画面
+<img width="998" alt="image" src="https://github.com/user-attachments/assets/16265f81-99eb-4750-8536-5837c00926c6">
 
 
-## Expanding the ESLint configuration
+- ## 求人投稿画面
+<img width="1001" alt="image" src="https://github.com/user-attachments/assets/97da9d89-31cb-4cc3-b042-ede950316672">
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-- Configure the top-level `parserOptions` property like this:
+# 使用技術について
+## nodeバージョン
+- node v22.7.0
+- npm v10.8.2
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## フロント
+- [React](https://reactjs.org/) 18.3.1
+- [TypeScript](https://www.typescriptlang.org/) 5.5.3
+- [Vite](https://vitejs.dev/) 5.4.1
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+## スタイル
+- [Tailwind CSS](https://tailwindcss.com/) 3.4.10
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## ホスティング
+- [Vercel](https://vercel.com/)
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+
+# 機能一覧
+- 求人の一覧表示
+- 求人職種のカテゴリフィルタリング
+- 年収額によるフィルタリング
+- 新規求人情報の投稿
+  - 右上の求人投稿ボタンを押すと、求人投稿ができる画面に遷移します。
+  - 求人タイトル、カテゴリ、年収(万円)を入力し投稿ボタンを押せば、求人一覧画面に移動し投稿内容を確認できます。
+    
